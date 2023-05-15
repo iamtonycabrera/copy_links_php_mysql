@@ -16,7 +16,7 @@ if(isset($_POST['crearEnlace'])){
 
     if(empty($enlace) || $enlace == "" || empty($descripcion) || $descripcion == "" || empty($categoria) || $categoria == ""){
         $error = "Error, algunos campos obligatorios estan vacios";
-        header("Location: agregar_enlace.php?error=" . urlencode($error));
+        header("Location:agregar_enlace.php?error=" . urlencode($error));
     } else {
         $fechaActual = date("Y-m-d");
 
@@ -47,17 +47,20 @@ if(isset($_POST['crearEnlace'])){
 
 ?>
 
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-sm-12">
+<h2 class="text-center">AGREGAR NUEVO ENLACE</h2>
 
-            <h4 class="bg-danger text-white"></h4>
-
-        </div>
+<div class="row">
+    <div class="col-sm-12">
+        <?php if (isset($error)): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>
+                    <?php echo $error ?>
+                </strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif ?>
     </div>
 </div>
-
-<h2 class="text-center">AGREGAR NUEVO ENLACE</h2>
 
 <div class="container card">
     <div class="row">

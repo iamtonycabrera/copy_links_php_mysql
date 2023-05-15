@@ -17,6 +17,28 @@ $enlaces = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 <h2 class="text-center">CATEGORÍAS</h2>
 
+<div class="row">
+    <div class="col-sm-12">
+        <?php if(isset($_GET['mensaje'])) : ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong><?php echo $_GET['mensaje'] ?></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif ?>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <?php if(isset($_GET['error'])) : ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong><?php echo $_GET['error'] ?></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif ?>
+    </div>
+</div>
+
 <div class="container card">
     <div class="row">
         <table id="categorias" class="table table-stripes" style="width:100%">
