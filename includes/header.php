@@ -1,3 +1,12 @@
+<?php
+
+  require_once "conexion_mysql.php";
+
+  $con = new ConexionDB();
+  $conectar = $con->connect();
+
+?>
+
 <!doctype html>
 <html lang="es">
   <head>
